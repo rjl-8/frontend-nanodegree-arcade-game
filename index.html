@@ -9,5 +9,28 @@
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
+
+    <div id="div_start">
+        Select a player and then press Start!
+        <select id="sel_playerImage" onchange="selectPlayerImageChange()">
+            <option value="images/char-boy.png">Boy</option>
+            <option value="images/char-cat-girl.png">Cat Girl</option>
+            <option value="images/char-horn-girl.png">Helmet Girl</option>
+            <option value="images/char-pink-girl.png">Pink Girl</option>
+            <option value="images/char-princess-girl.png">Princess</option>
+        </select>
+        <input type="button" value="Start!" onclick="Start()" />
+    </div>
+
+    <script>
+    function selectPlayerImageChange() {
+        player.changeImage(document.getElementById('sel_playerImage').value);
+        document.getElementById('sel_playerImage').blur();
+    }
+
+    function Start() {
+        game.toggleStart();
+    }
+    </script>
 </body>
 </html>
